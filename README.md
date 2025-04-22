@@ -12,6 +12,7 @@ Tento repozitář obsahuje přehled základní syntaxe jazyka C++ s ukázkami k�
 - [Operátory](#operátory)
 - [Řídicí struktury](#řídicí-struktury)
 - [Funkce](#funkce)
+- [Ukládání a načítání ze souboru](#ukládání-a-načítání-ze-souboru)
 
 ---
 
@@ -92,6 +93,32 @@ if (a > b) {
 }
 ```
 
+## Switch
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int x = 2;
+    switch (x) {
+        case 1:
+            cout << "Jedna" << endl;
+            break;
+        case 2:
+            cout << "Dva" << endl;
+            break;
+        default:
+            cout << "Jiné" << endl;
+    }
+    return 0;
+}
+```
+
+> **Poznámka:** `switch` umožňuje větvení na základě hodnoty celočíselných výrazů.
+
+---
+
 ### Smyčky
 
 ```cpp
@@ -133,4 +160,40 @@ int main() {
 - Deklarace funkce: `návratový_typ název(parametry) { ... }`
 - Funkce může vracet libovolný datový typ nebo `void`.
 - Parametry lze předávat podle hodnoty nebo referenčně.
+
+## Ukládání a načítání ze souboru
+
+```cpp
+#include <fstream>
+#include <iostream>
+using namespace std;
+
+int main() {
+    // Uložení do souboru
+    ofstream out("data.txt");
+    if (out.is_open()) {
+        out << "Hello, file!" << endl;
+        out.close();
+    }
+
+    // Načtení ze souboru
+    ifstream in("data.txt");
+    string line;
+    if (in.is_open()) {
+        while (getline(in, line)) {
+            cout << line << endl;
+        }
+        in.close();
+    }
+    return 0;
+}
+```
+
+> **Vysvětlení:**
+> - `#include <fstream>`: Práce se soubory.
+> - `ofstream`: Výstupní stream pro zápis do souborů.
+> - `ifstream`: Vstupní stream pro čtení ze souborů.
+> - `is_open()`: Kontrola, zda se soubor úspěšně otevřel.
+
+---
 
