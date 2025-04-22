@@ -12,10 +12,6 @@ Tento repozitář obsahuje přehled základní syntaxe jazyka C++ s ukázkami k�
 - [Operátory](#operátory)
 - [Řídicí struktury](#řídicí-struktury)
 - [Funkce](#funkce)
-- [Ukazatele a reference](#ukazatele-a-reference)
-- [Hlavičkové soubory a preprocesor](#hlavičkové-soubory-a-preprocesor)
-- [Kompilace a spuštění](#kompilace-a-spuštění)
-- [Licence](#licence)
 
 ---
 
