@@ -1,131 +1,119 @@
-Základní syntaxe C++
+# Základní syntaxe C++
 
-Toto repo obsahuje přehled základní syntaxe jazyka C++ včetně ukázek kódu a vysvětlení klíčových konceptů.
+Tento repozitář obsahuje přehled základní syntaxe jazyka C++ s ukázkami kódu a stručnými vysvětleními. Slouží jako rychlá reference pro začátečníky.
 
-Obsah
+---
 
-Úvod
+## Obsah
 
-Hello World
+- [Úvod](#úvod)
+- [Hello World](#hello-world)
+- [Proměnné a datové typy](#proměnné-a-datové-typy)
+- [Operátory](#operátory)
+- [Řídicí struktury](#řídicí-struktury)
+- [Funkce](#funkce)
+- [Třídy a objekty](#třídy-a-objekty)
+- [Ukazatele a reference](#ukazatele-a-reference)
+- [Hlavičkové soubory a preprocesor](#hlavičkové-soubory-a-preprocesor)
+- [Kompilace a spuštění](#kompilace-a-spuštění)
+- [Licence](#licence)
 
-Proměnné a datové typy
+---
 
-Operátory
+## Úvod
 
-Řídicí struktury
+C++ je výkonný, víceparadigmatický programovací jazyk podporující procedurální, objektově orientované i generické programování. Tento dokument pokrývá základní konstrukce, které vám pomohou rychle začít.
 
-Funkce
+---
 
-Třídy a objekty
+## Hello World
 
-Ukazatele a reference
-
-Hlavičkové soubory a preprocesor
-
-Kompilace a spuštění
-
-Licence
-
-Úvod
-
-C++ je výkonný programovací jazyk s podporou objektově orientovaného, procedurálního i generického programování. Tento přehled pokrývá základní konstrukce, které vám pomohou začít.
-
-Hello World
-
+```cpp
 #include <iostream>
 
 int main() {
     std::cout << "Hello, World!" << std::endl;
     return 0;
 }
+```
 
-#include <iostream>: Zahrnuje knihovnu pro vstup a výstup.
+> **Vysvětlení:**
+> - `#include <iostream>`: Zahrnuje knihovnu pro vstup a výstup.
+> - `int main()`: Hlavní funkce, vstupní bod programu.
+> - `std::cout`: Výstupní proud pro konzoli.
+> - `std::endl`: Konec řádku a vyprázdnění proudu.
+> - `return 0;`: Signalizuje úspěšné ukončení programu.
 
-int main(): Vstupní bod programu.
+---
 
-std::cout: Výstup na konzoli.
+## Proměnné a datové typy
 
-return 0;: Ukončení programu.
-
-Proměnné a datové typy
-
-int a = 5;             // Celé číslo
-float b = 3.14f;       // Desetinné číslo (jednoduchá přesnost)
+```cpp
+int    a = 5;          // Celé číslo
+float  b = 3.14f;      // Desetinné číslo (jednoduchá přesnost)
 double c = 2.71828;    // Desetinné číslo (dvojnásobná přesnost)
-char d = 'A';          // Jeden znak
-bool e = true;         // Pravdivostní hodnota
+char   d = 'A';        // Jeden znak
+bool   e = true;       // Pravdivostní hodnota
+```
 
-C++ podporuje základní datové typy: int, float, double, char, bool.
+- **Primární typy:** `int`, `float`, `double`, `char`, `bool`
+- Proměnné lze deklarovat s inicializací nebo bez ní:
+  ```cpp
+  int x;      // bez inicializace
+  int y = 10; // s inicializací
+  ```
 
-Proměnné lze deklarovat s inicializací nebo bez ní.
+---
 
-Operátory
+## Operátory
 
-Typ
+| Typ           | Operátory               | Popis                              |
+| ------------- | ----------------------- | ---------------------------------- |
+| Aritmetické   | `+`, `-`, `*`, `/`, `%` | Základní matematické operace       |
+| Přiřazovací   | `=`, `+=`, `-=`, `*=`   | Přiřazení a rozšířené přiřazení    |
+| Relační       | `==`, `!=`, `<`, `>`, `<=`, `>=` | Porovnání hodnot             |
+| Logické       | `&&`, `||`, `!`         | Logické operace                   |
 
-Příklad
+---
 
-Popis
+## Řídicí struktury
 
-Aritmetické
+### Podmínky
 
-+, -, *, /, %
-
-Základní matematické operace
-
-Přiřazovací
-
-=, +=, -=
-
-Přiřazení a kombinované operace
-
-Relační
-
-==, !=, <, >
-
-Porovnání hodnot
-
-Logické
-
-&&, `
-
-
-
-, !`
-
-Logické spojky
-
-Řídicí struktury
-
-Podmínky
-
+```cpp
 if (a > b) {
-    // kód
+    // kód, když a je větší než b
 } else if (a == b) {
-    // kód
+    // kód, když jsou stejné
 } else {
-    // kód
+    // kód v ostatních případech
 }
+```
 
-Smyčky
+### Smyčky
 
+```cpp
 // for
 for (int i = 0; i < 10; ++i) {
-    // kód
+    // opakovaný kód
 }
 
 // while
 while (condition) {
-    // kód
+    // dokud je podmínka pravdivá
 }
 
 // do-while
 do {
-    // kód
+    // vykoná se alespoň jednou
 } while (condition);
+```
 
-Funkce
+---
 
+## Funkce
+
+```cpp
 double sum(double x, double y) {
     return x + y;
 }
@@ -135,12 +123,18 @@ int main() {
     std::cout << "Součet: " << result << std::endl;
     return 0;
 }
+```
 
-Deklarace: návratový typ, název a parametry.
+- Deklarace funkce: `návratový_typ název(parametry) { ... }`
+- Funkce může vracet libovolný datový typ nebo `void`.
+- Parametry lze předávat podle hodnoty nebo referenčně.
 
-Funkce může vracet libovolný datový typ nebo void.
+---
 
-Třídy a objekty
+## Třídy a objekty
+
+```cpp
+#include <string>
 
 class Person {
 public:
@@ -159,42 +153,63 @@ int main() {
     p.greet();
     return 0;
 }
+```
 
-class: Definuje nový typ s poli a metodami.
+- `class`: Definice vlastního datového typu.
+- Přístupové modifikátory: `public`, `protected`, `private`.
+- Vlastnosti (př. `name`) a metody (př. `greet`).
 
-public: Přístupové modifikátory (public, protected, private).
+---
 
-Ukazatele a reference
+## Ukazatele a reference
 
+```cpp
 int x = 10;
 int* ptr = &x;      // ukazatel na x
 int& ref = x;       // reference na x
 
 std::cout << *ptr << std::endl; // dereference
-ref = 20;          // změní x na 20
+ref = 20;        // změní x na 20
+```
 
-Ukazatel (*): ukládá adresu proměnné.
+- **Ukazatel** (`*`): Ukládá adresu proměnné.
+- **Reference** (`&`): Alias pro existující proměnnou.
+- Pointer aritmetika umožňuje posun adresy.
 
-Reference (&): alias pro existující proměnnou.
+---
 
-Hlavičkové soubory a preprocesor
+## Hlavičkové soubory a preprocesor
 
-#include: Zahrnuje obsah souborů.
+- `#include`: Vkládá obsah jiného souboru.
+- Strážci hlaviček se používají k ochraně před opakovaným vkládáním:
+  ```cpp
+  #ifndef MYHEADER_H
+  #define MYHEADER_H
+  // obsah hlavičky
+  #endif
+  ```
 
-Strážci hlaviček:
+---
 
-#ifndef HEADER_H
-#define HEADER_H
-// obsah
-#endif
+## Kompilace a spuštění
 
-Kompilace a spuštění
-
-Kompilace pomocí g++:
-
+```bash
+# Kompilace s podporou C++17
 g++ -std=c++17 main.cpp -o my_program
+
+# Spuštění
 ./my_program
+```
 
--std=c++17: Použití standardu C++17.
+- `-std=c++17`: Nastavení standardu C++17.
+- `-o`: Určuje název výstupního souboru.
 
--o: Název výstupního souboru.
+---
+
+## Licence
+
+Tento projekt je licencován pod licencí [MIT](LICENSE).
+
+---
+
+*Přejeme hodně úspěchů při učení C++!*
