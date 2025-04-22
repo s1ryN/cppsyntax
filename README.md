@@ -72,13 +72,13 @@ string s = "Hello";      // Řetězec znaků
 
 ## Operátory
 
-| Typ           | Operátory                                | Popis                              |
-| ------------- | ---------------------------------------- | ---------------------------------- |
-| Aritmetické   | `+`, `-`, `*`, `/`, `%`                  | Základní matematické operace       |
-| Přiřazovací   | `=`, `+=`, `-=`, `*=`                    | Přiřazení a rozšířené přiřazení    |
-| Relační       | `==`, `!=`, `<`, `>`, `<=`, `>=`         | Porovnání hodnot                   |
-| Logické       | `&&` (and), OR (||), `!` (not)           | Logické operace                    |
-| Alternativní  | `and`, `or`, `not`                       | Slovní ekvivalenty logických op.   |
+| Typ           | Operátory                                             | Popis                              |
+| ------------- | ----------------------------------------------------- | ---------------------------------- |
+| Aritmetické   | `+`, `-`, `*`, `/`, `%`                               | Základní matematické operace       |
+| Přiřazovací   | `=`, `+=`, `-=`, `*=`                                 | Přiřazení a rozšířené přiřazení    |
+| Relační       | `==`, `!=`, `<`, `>`, `<=`, `>=`                      | Porovnání hodnot                   |
+| Logické       | `&&` (and), OR (dvě svislé čáry), `!` (not)           | Logické operace                    |
+| Alternativní  | `and`, `or`, `not`                                    | Slovní ekvivalenty logických op.   |
 
 ---
 
