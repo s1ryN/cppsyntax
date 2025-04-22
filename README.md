@@ -1,0 +1,2 @@
+# cppsyntax
+Syntaxe základního C++
