@@ -12,7 +12,6 @@ Tento repozitář obsahuje přehled základní syntaxe jazyka C++ s ukázkami k�
 - [Operátory](#operátory)
 - [Řídicí struktury](#řídicí-struktury)
 - [Funkce](#funkce)
-- [Třídy a objekty](#třídy-a-objekty)
 - [Ukazatele a reference](#ukazatele-a-reference)
 - [Hlavičkové soubory a preprocesor](#hlavičkové-soubory-a-preprocesor)
 - [Kompilace a spuštění](#kompilace-a-spuštění)
@@ -30,18 +29,20 @@ C++ je výkonný, víceparadigmatický programovací jazyk podporující procedu
 
 ```cpp
 #include <iostream>
+using namespace std;
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    cout << "Hello, World!" << endl;
     return 0;
 }
 ```
 
 > **Vysvětlení:**
 > - `#include <iostream>`: Zahrnuje knihovnu pro vstup a výstup.
+> - `using namespace std;`: Umožňuje používat prvky jmenného prostoru std bez předpony.
 > - `int main()`: Hlavní funkce, vstupní bod programu.
-> - `std::cout`: Výstupní proud pro konzoli.
-> - `std::endl`: Konec řádku a vyprázdnění proudu.
+> - `cout`: Výstupní proud pro konzoli.
+> - `endl`: Konec řádku a vyprázdnění proudu.
 > - `return 0;`: Signalizuje úspěšné ukončení programu.
 
 ---
@@ -49,30 +50,35 @@ int main() {
 ## Proměnné a datové typy
 
 ```cpp
-int    a = 5;          // Celé číslo
-float  b = 3.14f;      // Desetinné číslo (jednoduchá přesnost)
-double c = 2.71828;    // Desetinné číslo (dvojnásobná přesnost)
-char   d = 'A';        // Jeden znak
-bool   e = true;       // Pravdivostní hodnota
+#include <string>
+using namespace std;
+
+int    a = 5;            // Celé číslo
+float  b = 3.14f;        // Desetinné číslo (jednoduchá přesnost)
+double c = 2.71828;      // Desetinné číslo (dvojnásobná přesnost)
+char   d = 'A';          // Jeden znak
+bool   e = true;         // Pravdivostní hodnota
+string s = "Hello";      // Řetězec znaků
 ```
 
-- **Primární typy:** `int`, `float`, `double`, `char`, `bool`
+- **Primární typy:** `int`, `float`, `double`, `char`, `bool`, `string`
 - Proměnné lze deklarovat s inicializací nebo bez ní:
   ```cpp
-  int x;      // bez inicializace
-  int y = 10; // s inicializací
+  int x;        // bez inicializace
+  int y = 10;   // s inicializací
   ```
 
 ---
 
 ## Operátory
 
-| Typ           | Operátory               | Popis                              |
-| ------------- | ----------------------- | ---------------------------------- |
-| Aritmetické   | `+`, `-`, `*`, `/`, `%` | Základní matematické operace       |
-| Přiřazovací   | `=`, `+=`, `-=`, `*=`   | Přiřazení a rozšířené přiřazení    |
-| Relační       | `==`, `!=`, `<`, `>`, `<=`, `>=` | Porovnání hodnot             |
-| Logické       | `&&`, `||`, `!`         | Logické operace                   |
+| Typ           | Operátory                                | Popis                              |
+| ------------- | ---------------------------------------- | ---------------------------------- |
+| Aritmetické   | `+`, `-`, `*`, `/`, `%`                  | Základní matematické operace       |
+| Přiřazovací   | `=`, `+=`, `-=`, `*=`                    | Přiřazení a rozšířené přiřazení    |
+| Relační       | `==`, `!=`, `<`, `>`, `<=`, `>=`         | Porovnání hodnot                   |
+| Logické       | `&&` (and), `||` (or), `!` (not)         | Logické operace                    |
+| Alternativní  | `and`, `or`, `not`                       | Slovní ekvivalenty logických op.   |
 
 ---
 
@@ -114,13 +120,16 @@ do {
 ## Funkce
 
 ```cpp
+#include <iostream>
+using namespace std;
+
 double sum(double x, double y) {
     return x + y;
 }
 
 int main() {
     double result = sum(3.5, 2.5);
-    std::cout << "Součet: " << result << std::endl;
+    cout << "Součet: " << result << endl;
     return 0;
 }
 ```
@@ -131,36 +140,6 @@ int main() {
 
 ---
 
-## Třídy a objekty
-
-```cpp
-#include <string>
-
-class Person {
-public:
-    std::string name;
-    int age;
-
-    void greet() const {
-        std::cout << "Ahoj, jmenuji se " << name << "." << std::endl;
-    }
-};
-
-int main() {
-    Person p;
-    p.name = "Jan";
-    p.age = 30;
-    p.greet();
-    return 0;
-}
-```
-
-- `class`: Definice vlastního datového typu.
-- Přístupové modifikátory: `public`, `protected`, `private`.
-- Vlastnosti (př. `name`) a metody (př. `greet`).
-
----
-
 ## Ukazatele a reference
 
 ```cpp
@@ -168,8 +147,8 @@ int x = 10;
 int* ptr = &x;      // ukazatel na x
 int& ref = x;       // reference na x
 
-std::cout << *ptr << std::endl; // dereference
-ref = 20;        // změní x na 20
+cout << *ptr << endl; // dereference
+ref = 20;             // změní x na 20
 ```
 
 - **Ukazatel** (`*`): Ukládá adresu proměnné.
