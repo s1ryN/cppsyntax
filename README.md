@@ -77,7 +77,7 @@ string s = "Hello";      // Řetězec znaků
 | Aritmetické   | `+`, `-`, `*`, `/`, `%`                  | Základní matematické operace       |
 | Přiřazovací   | `=`, `+=`, `-=`, `*=`                    | Přiřazení a rozšířené přiřazení    |
 | Relační       | `==`, `!=`, `<`, `>`, `<=`, `>=`         | Porovnání hodnot                   |
-| Logické       | `&&` (and), `||` (or), `!` (not)         | Logické operace                    |
+| Logické       | `&&` (and), OR (||), `!` (not)           | Logické operace                    |
 | Alternativní  | `and`, `or`, `not`                       | Slovní ekvivalenty logických op.   |
 
 ---
@@ -138,57 +138,3 @@ int main() {
 - Funkce může vracet libovolný datový typ nebo `void`.
 - Parametry lze předávat podle hodnoty nebo referenčně.
 
----
-
-## Ukazatele a reference
-
-```cpp
-int x = 10;
-int* ptr = &x;      // ukazatel na x
-int& ref = x;       // reference na x
-
-cout << *ptr << endl; // dereference
-ref = 20;             // změní x na 20
-```
-
-- **Ukazatel** (`*`): Ukládá adresu proměnné.
-- **Reference** (`&`): Alias pro existující proměnnou.
-- Pointer aritmetika umožňuje posun adresy.
-
----
-
-## Hlavičkové soubory a preprocesor
-
-- `#include`: Vkládá obsah jiného souboru.
-- Strážci hlaviček se používají k ochraně před opakovaným vkládáním:
-  ```cpp
-  #ifndef MYHEADER_H
-  #define MYHEADER_H
-  // obsah hlavičky
-  #endif
-  ```
-
----
-
-## Kompilace a spuštění
-
-```bash
-# Kompilace s podporou C++17
-g++ -std=c++17 main.cpp -o my_program
-
-# Spuštění
-./my_program
-```
-
-- `-std=c++17`: Nastavení standardu C++17.
-- `-o`: Určuje název výstupního souboru.
-
----
-
-## Licence
-
-Tento projekt je licencován pod licencí [MIT](LICENSE).
-
----
-
-*Přejeme hodně úspěchů při učení C++!*
